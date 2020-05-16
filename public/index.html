@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <title>React App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const arr = [1,2,3,4,5,4,3];
+      const a0 = arr.map(v => v>3 && v);
+      console.log(a0)
+      const a1 = arr.filter(v => v>3);
+      console.log(a1)
+      const a2 = arr.some(v => {
+        return v===3;
+      });
+      console.log(a2)
+      const a3 = arr.every(v => {
+        return v===3;
+      });
+      console.log(a3)
+      const a4 = arr.find(v => v===3);
+      console.log(a4)
+      const a5 = arr.findIndex(v => v===3);
+      console.log(a5)
+      const a6 = arr.reduce((v, i)=> {
+        return v+i;
+      });
+      console.log(a6)
+      const a7 = arr.reduce((v, i)=> {
+        if(v[i]){
+          v[i].push(i)
+        }else{
+          v[i]=[i]
+        }
+        return v;
+      },{});
+      console.log(a7)
+      let arr0 = [1, 2, 3], arr1 = [3, 4, 5];
+      console.log(arr0.concat(arr1));
+      console.log([ ...arr0, ...arr1 ]);
+      console.log(new Array(20).fill('=').join(''));
+      let obj = { name: '小华', age: 23 }, obj1 = { sex: '男' };
+      console.log(Object.assign(obj,obj1));
+      console.log( {...obj, ...obj1} );
+      console.log(Object.values(obj))
+      console.log(Object.keys(obj));
+      let obj2 = [[ 'name', '小华'], ['age', 23 ], ['sex', '男'] ];
+      Object.entries(obj2).reduce((v, [key, value]) => {
+        console.log(key,value)
+      },'');
+      for (let [key, value] of Object.entries(obj2)) {
+        console.log(key, value)
+      }
+    </script>
+  </body>
+</html>
